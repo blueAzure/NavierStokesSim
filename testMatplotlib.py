@@ -54,8 +54,6 @@ if __name__ == '__main__':
             npArray[x,y] = (x-1)*yLen + y
     testPlot2Dim(npArray, "2dimDataByNP")
 
-
-
     print "program end!"
 
 
