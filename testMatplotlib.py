@@ -30,8 +30,7 @@ def testPlot2Dim(data, title):
     plt.imshow(data)
     plt.title(title)
     plt.grid()
-    plt.savefig('OUTPUT/test_2dim.png')
-
+    plt.savefig('OUTPUT/'+title)
 
 
 
@@ -46,6 +45,15 @@ if __name__ == '__main__':
     # create 2dim data plot
     dataArray = np.random.randn(100, 100)
     testPlot2Dim(dataArray, "2dimData")
+
+    # create 2dim data plot by numpyArray
+    xLen, yLen = 200, 300
+    npArray = np.zeros((xLen, yLen))
+    for x in range(xLen):
+        for y in range(yLen):
+            npArray[x,y] = (x-1)*yLen + y
+    testPlot2Dim(npArray, "2dimDataByNP")
+
 
 
     print "program end!"
