@@ -14,6 +14,15 @@ import numpy as np
 #import matplotlib.animation as animation
 
 
+xLen = 20
+yLen = 30
+
+# use Staggered Grid
+pressure = np.zeros((xLen+2, yLen+2))
+velocity_x = np.zeros((xLen+2+1, yLen+2))
+velocity_y = np.zeros((xLen+2, yLen+2+1))
+
+
 
 
 
