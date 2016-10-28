@@ -20,6 +20,23 @@ import math
 import numpy as np
 
 
+def initPlot():
+    # start matplotlib's window
+    # setup figure caption, bar, color, title, label...
+
+
+def initFields():
+    # initialize velocity(u,v) array.
+    # initialize pressure array.
+    # initialize update temp velocity array.
+    # initialize phi array.
+
+
+def updatePlot():
+    # update matplotlib's window
+    # (if argu is "0" then save image. Otherwise don't do it.)
+
+
 # solvePoissonEquation
 # that calls poissonLoop
 def solvePoissonEquation():
@@ -55,9 +72,7 @@ if __name__ == '__main__':
 
     # loop:
     #   update field
-    #   (error check)
-    #   update plot
-    #   save image
+    #   update plot (if argu is "0" then save image. Otherwise don't do it.
     # endLoop
 
     print "end Program!"
