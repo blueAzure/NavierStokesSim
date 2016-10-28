@@ -3,7 +3,16 @@
 """
 That is RayleighBenardConvectionSim.py
 
+Equation: Navier-Stokes Equation
+Method: Velocity-Pressure Method
+        SOR Method for Poisson Equation
+        Time Difference is analyzed with Second-order accurate forward-difference Scheme.
+        Poisson Equation is analyzed with Second-order accurate central-difference Scheme.
+Grid: Staggered grid 
 
+Created by.Suga Arata on 2016.10.28
+
+Update ???
 
 """
 
