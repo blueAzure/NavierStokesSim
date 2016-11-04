@@ -20,7 +20,14 @@ import numpy as np
 
 
 
-NTS=10 # Number of Time Steps
+NT=10 # Number of Time Steps
+NX=100 
+NY=100
+DT=0.01 
+DX=0.001
+DY=0.001
+
+
 
 
 
@@ -97,8 +104,8 @@ if __name__ == '__main__':
     initFields() # Initialize Fields
     initPlot() # Initialize Plot
 
-    for time in range(NTS):
-        print "time:", time
+    for time in np.linspace(0, NT, NT/DT):
+        print "time:", round(time, 3)
         updateFields() 
         updatePlot()
         
