@@ -20,7 +20,7 @@ import numpy as np
 
 
 
-NTS=1000 # Number of Time Steps
+NTS=10 # Number of Time Steps
 
 
 
@@ -42,7 +42,6 @@ def initFields():
 def updatePlot():
     print "updatePlot"
     # update matplotlib's window
-    #if argu is true then save image. Otherwise don't do it.
 
 
 # solvePoissonEquation
@@ -51,29 +50,45 @@ def solvePoissonEquation():
     print "solvePoisoonEquation"
     # init velocity temp Array for update
     # init pressure temp Array for update
-    # loop: 
-    #   call modPhi
-    #   check error
-    # endLoop
+    NTER = 1000 # max number of Loop count. about xLength*yLength???
+
+    for count in range(NTER):
+        pass
+        # call modPhi
+        # check error
+        # endLoops
 
 
 # modPhi: modify Phi number.
 # Phi is modificated Pressure
 # that is called "solvePoissonEquation" 
-def modPhi():
-    print "modPhi"
+def calcCorrectionPhi():
+    print "calcCorrectionPhi"
+    solvePoissonEquation()
+
+    # check solution by Contiunous Equation 
+    
+
+def calcPredictionalVel():
+    print "calcPredictionalVel"
+
+
+def calcVelocity():
+    print "calcVelocity"
+
+
+def calcPressure():
+    print "calcPressure"
 
 
 def updateFields():
     print "updateFields"
 
-    # loop(time):
-    #   calc predictional velocity(u,v)
-    #   calc correction pressure by SOR method
-    #     check solution by Contiunous Equation 
-    #   update velocity(u,v)
-    #   update pressure
-    # endLoop
+    calcPredictionalVel() # calc predictional velocity(u,v)
+    calcCorrectionPhi() # calc correction pressure(Phi) by SOR method
+    calcVelocity() # update velocity(u,v)
+    calcPressure() # update pressure
+
 
 
 if __name__ == '__main__':
@@ -84,12 +99,9 @@ if __name__ == '__main__':
 
     for time in range(NTS):
         print "time:", time
+        updateFields() 
+        updatePlot()
         
-    # loop:
-    #   update field
-    #   update plot
-    # endLoop
-
     print "end Program!"
  
 
