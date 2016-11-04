@@ -34,7 +34,7 @@ def initFields():
 
 def updatePlot():
     # update matplotlib's window
-    # (if argu is "0" then save image. Otherwise don't do it.)
+    #if argu is true then save image. Otherwise don't do it.
 
 
 # solvePoissonEquation
@@ -59,20 +59,24 @@ def modPhi():
 def updateFields():
     print "updateFields!"
 
-    # update Pressure
-    # update velocity(u,v)
-    # check solution by Contiunous Equation
+    # loop(time):
+    #   calc predictional velocity(u,v)
+    #   calc correction pressure by SOR method
+    #     check solution by Contiunous Equation 
+    #   update velocity(u,v)
+    #   update pressure
+    # endLoop
 
 
 if __name__ == '__main__':
     print "start Program!"
     
-    # Initialize Fields
-    # Initialize Plot
+    initFields() # Initialize Fields
+    initPlot() # Initialize Plot
 
     # loop:
     #   update field
-    #   update plot (if argu is "0" then save image. Otherwise don't do it.
+    #   update plot
     # endLoop
 
     print "end Program!"
