@@ -10,9 +10,8 @@ Method: Velocity-Pressure Method
         Poisson Equation is analyzed with Second-order accurate central-difference Scheme.
 Grid: Staggered grid 
 
-Created by.Suga Arata on 2016.10.28
+Creating by.Suga Arata on 2016.10.28~
 
-Update ???
 
 """
 
@@ -20,12 +19,20 @@ import math
 import numpy as np
 
 
+
+NTS=1000 # Number of Time Steps
+
+
+
+
 def initPlot():
+    print "initPlot"
     # start matplotlib's window
     # setup figure caption, bar, color, title, label...
 
 
 def initFields():
+    print "initFields"
     # initialize velocity(u,v) array.
     # initialize pressure array.
     # initialize update temp velocity array.
@@ -33,6 +40,7 @@ def initFields():
 
 
 def updatePlot():
+    print "updatePlot"
     # update matplotlib's window
     #if argu is true then save image. Otherwise don't do it.
 
@@ -40,7 +48,7 @@ def updatePlot():
 # solvePoissonEquation
 # that calls poissonLoop
 def solvePoissonEquation():
-    print solvePoisoonEquation
+    print "solvePoisoonEquation"
     # init velocity temp Array for update
     # init pressure temp Array for update
     # loop: 
@@ -53,11 +61,11 @@ def solvePoissonEquation():
 # Phi is modificated Pressure
 # that is called "solvePoissonEquation" 
 def modPhi():
-    print "!"
+    print "modPhi"
 
 
 def updateFields():
-    print "updateFields!"
+    print "updateFields"
 
     # loop(time):
     #   calc predictional velocity(u,v)
@@ -74,6 +82,9 @@ if __name__ == '__main__':
     initFields() # Initialize Fields
     initPlot() # Initialize Plot
 
+    for time in range(NTS):
+        print "time:", time
+        
     # loop:
     #   update field
     #   update plot
