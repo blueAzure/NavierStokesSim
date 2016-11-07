@@ -21,11 +21,11 @@ import numpy as np
 
 
 NT=10 # Number of Time Steps
-NX=100 
-NY=100
-DT=0.01 
-DX=0.001
-DY=0.001
+NX=100 # Number of X Partitions
+NY=100 # Number of Y Partitions
+DT=0.01 # Number of Real Time 
+DX=0.001 # Number of X Real cell Length
+DY=0.001 # Number of Y Real cell Length
 
 
 
