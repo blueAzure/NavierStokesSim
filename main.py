@@ -42,23 +42,23 @@ def initPlot():
     print "initPlot"
     # Open matplotlib's window
     # Setup figure caption, bar, color, title, label...
-
+    pass
 
 def initFields():
-    print "initFields"
+    #print "initFields"
     # Setup Velocity(u,v) array for initial environment
     # Setup Pressure array for initial environment
-
+    pass
 
 def updatePlot():
-    print "updatePlot"
+    #print "updatePlot"
     # Update matplotlib's window
-
+    pass
 
 # SolvePoissonEquation
 # That calls poissonLoop
 def solvePoissonEquation():
-    print "solvePoisoonEquation"
+    #print "solvePoisoonEquation"
     # Init velocity temp Array for update
     # Init pressure temp Array for update
     NTER = 1000 # max number of Loop count. about xLength*yLength???
@@ -74,26 +74,30 @@ def solvePoissonEquation():
 # Phi is modificated Pressure
 # that is called "solvePoissonEquation" 
 def calcCorrectionPhi():
-    print "calcCorrectionPhi"
+    #print "calcCorrectionPhi"
     solvePoissonEquation()
 
     # check solution by Contiunous Equation 
-    
+    pass
+
 
 def calcPredictionalVel():
-    print "calcPredictionalVel"
+    #print "calcPredictionalVel"
+    pass
 
 
 def calcVelocity():
-    print "calcVelocity"
+    #print "calcVelocity"
+    pass
 
 
 def calcPressure():
-    print "calcPressure"
+    #print "calcPressure"
+    pass
 
 
 def updateFields():
-    print "updateFields"
+    #print "updateFields"
 
     calcPredictionalVel() # calc predictional velocity(u,v)
     calcCorrectionPhi() # calc correction pressure(Phi) by SOR method
@@ -109,7 +113,7 @@ if __name__ == '__main__':
     initPlot() # Initialize Plot
 
     for time in np.linspace(0, NT, NT/DT):
-        print "time:", round(time, 3)
+        #print "time:", round(time, 3)
         updateFields() 
         updatePlot()
         
