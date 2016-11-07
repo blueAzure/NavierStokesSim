@@ -55,7 +55,7 @@ def initPlot():
     plt.figure()
     X,Y = np.meshgrid(np.arange(NX), np.arange(NY))
     plt.axis("equal")
-    plt.pcolor(X,Y,vel_x)
+    plt.pcolor(X,Y,vel_x.transpose()) # swap between X and Y Axis
     plt.colorbar()
     plt.xlabel("x")
     plt.ylabel("y")
