@@ -57,7 +57,8 @@ def initPlot():
     plt.axis("equal")
     plt.pcolor(X,Y,vel_x)
     plt.colorbar()
-
+    plt.xlabel("x")
+    plt.ylabel("y")
 
     # Add close window key "q".
     #def quit_figure(event):
