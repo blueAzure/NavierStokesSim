@@ -38,34 +38,29 @@ pres = np.zeros([NX, NY]) # Pressure array
 
 
 
-
-
-
 def initPlot():
     print "initPlot"
-    # start matplotlib's window
-    # setup figure caption, bar, color, title, label...
+    # Open matplotlib's window
+    # Setup figure caption, bar, color, title, label...
 
 
 def initFields():
     print "initFields"
-    # initialize velocity(u,v) array.
-    # initialize pressure array.
-    # initialize update temp velocity array.
-    # initialize phi array.
+    # Setup Velocity(u,v) array for initial environment
+    # Setup Pressure array for initial environment
 
 
 def updatePlot():
     print "updatePlot"
-    # update matplotlib's window
+    # Update matplotlib's window
 
 
-# solvePoissonEquation
-# that calls poissonLoop
+# SolvePoissonEquation
+# That calls poissonLoop
 def solvePoissonEquation():
     print "solvePoisoonEquation"
-    # init velocity temp Array for update
-    # init pressure temp Array for update
+    # Init velocity temp Array for update
+    # Init pressure temp Array for update
     NTER = 1000 # max number of Loop count. about xLength*yLength???
 
     for count in range(NTER):
