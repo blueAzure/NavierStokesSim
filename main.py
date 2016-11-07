@@ -29,12 +29,12 @@ DY=0.001 # Number of Y Real cell Length
 
 
 
-preVel_x = numpy.zeros(NX, NY) # Predictional Horizontal Velocity component(Vx) array
-preVel_y = numpy.zeros(NX, NY) # Predictional Vertical Velocity component(Vy) array
-vel_x = numpy.zeros(NX, NY) # Horizontal Velocity component(Vx) array
-vel_y = numpy.zeros(NX, NY) # Vertical Velocity component(Vy) array
-phi = numpy.zeros(NX, NY) # Correctional Pressure array
-pres = numpy.zeros() # Pressure array
+preVel_x = np.zeros([NX, NY]) # Predictional Horizontal Velocity component(Vx) array
+preVel_y = np.zeros([NX, NY]) # Predictional Vertical Velocity component(Vy) array
+vel_x = np.zeros([NX, NY]) # Horizontal Velocity component(Vx) array
+vel_y = np.zeros([NX, NY]) # Vertical Velocity component(Vy) array
+phi = np.zeros([NX, NY]) # Correctional Pressure array
+pres = np.zeros([NX, NY]) # Pressure array
 
 
 
