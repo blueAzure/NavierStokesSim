@@ -17,7 +17,7 @@ Creating by.Suga Arata on 2016.10.28~
 
 import math
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 
 NT=10 # Number of Time Steps
@@ -42,6 +42,14 @@ def initPlot():
     print "initPlot"
     # Open matplotlib's window
     # Setup figure caption, bar, color, title, label...
+
+    vel_x[5, 5] = 50
+    
+    plt.figure()
+    X,Y = np.meshgrid(np.arange(NX), np.arange(NY))
+    plt.pcolor(X,Y,vel_x)
+    plt.colorbar
+    plt.show()
     pass
 
 def initFields():
