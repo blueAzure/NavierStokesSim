@@ -49,8 +49,15 @@ def initPlot():
     X,Y = np.meshgrid(np.arange(NX), np.arange(NY))
     plt.pcolor(X,Y,vel_x)
     plt.colorbar
+
+    # Add close window key "q".
+    #def quit_figure(event):
+    #    if event.key == 'q':
+    #        plt.close(event.canvas.figure)
+    #cid = plt.gcf().canvas.mpl_connect('key_press_event', quit_figure)
     plt.show()
     pass
+
 
 def initFields():
     #print "initFields"
