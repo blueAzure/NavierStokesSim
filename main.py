@@ -38,9 +38,9 @@ pres = np.zeros([NX, NY]) # Pressure array
 
 
 def setTestData():
-    #for x in range(NX):
-    #    for y in range(NY):
-    #        vel_x[x,y] = math.cos(0.01*y)
+    for x in range(NX):
+        for y in range(NY):
+            vel_x[x,y] = math.cos(0.1*x) + math.cos(0.1*y)
     
     vel_x[5,10] = 10
     
@@ -56,7 +56,7 @@ def initPlot():
     X,Y = np.meshgrid(np.arange(NX), np.arange(NY))
     plt.axis("equal")
     plt.pcolor(X,Y,vel_x)
-    plt.colorbar
+    plt.colorbar()
 
 
     # Add close window key "q".
