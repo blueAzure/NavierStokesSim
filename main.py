@@ -37,13 +37,15 @@ phi = np.zeros([NX, NY]) # Correctional Pressure array
 pres = np.zeros([NX, NY]) # Pressure array
 
 
+
+
 def setTestData():
     for x in range(NX):
         for y in range(NY):
             vel_x[x,y] = math.cos(0.1*x) + math.cos(0.1*y)
-    
     vel_x[5,10] = 10
     
+
 
 def initPlot():
     print "initPlot"
@@ -75,10 +77,12 @@ def initFields():
     # Setup Pressure array for initial environment
     pass
 
+
 def updatePlot():
     #print "updatePlot"
     # Update matplotlib's window
     pass
+
 
 # SolvePoissonEquation
 # That calls poissonLoop
