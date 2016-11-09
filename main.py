@@ -20,10 +20,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-NT=1000 # Number of Time Steps
+NT=1 # Number of Time Steps
 NX=100 # Number of X Partitions
 NY=100 # Number of Y Partitions
-DT=0.01 # Number of Real Time 
+DT=0.02 # Number of Real Time 
 DX=0.001 # Number of X Real cell Length
 DY=0.001 # Number of Y Real cell Length
 
@@ -43,7 +43,6 @@ def setTestData():
     for x in range(NX):
         for y in range(NY):
             vel_x[x,y] = math.cos(0.1*x) + math.cos(0.1*y) + np.random.rand()*3
-            vel_y[x,y] = np.random.rand()*10
     vel_x[5,10] = 10
 
 
@@ -52,26 +51,19 @@ def initPlot():
     # Open matplotlib's window
     # Setup figure caption, bar, color, title, label...
     
-    setTestData()
-    
     plt.figure()
     X,Y = np.meshgrid(np.arange(NX), np.arange(NY))
     plt.axis("equal")
-    plt.imshow(vel_x)
+    im = plt.imshow(vel_x)
     plt.colorbar()
     plt.xlabel("x")
     plt.ylabel("y")
-
-
-    # Add close window key "q".
-    #def quit_figure(event):
-    #    if event.key == 'q':
-    #        plt.close(event.canvas.figure)
-    #cid = plt.gcf().canvas.mpl_connect('key_press_event', quit_figure)
+    plt.title("vel_x:" + "")
 
     plt.draw()
     plt.pause(0.01)
-
+    
+    return im
     pass
 
 
@@ -82,9 +74,14 @@ def initFields():
     pass
 
 
-def updatePlot():
+def updatePlot(im):
     #print "updatePlot"
     # Update matplotlib's window
+
+    im.set_data(vel_y)
+    plt.title("vel_y:" + "")
+    plt.draw()
+
     pass
 
 
@@ -142,13 +139,15 @@ def updateFields():
 if __name__ == '__main__':
     print "start Program!"
     
-    initFields() # Initialize Fields
-    initPlot() # Initialize Plot
+    #initFields() # Initialize Fields
+    setTestData()
+
+    im = initPlot() # Initialize Plot
 
     for time in np.linspace(0, NT, NT/DT):
         print "time:", round(time, 3)
         updateFields() 
-        updatePlot()
+        updatePlot(im)
         
     print "end Program!"
  
