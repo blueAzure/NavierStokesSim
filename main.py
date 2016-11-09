@@ -82,11 +82,12 @@ def initFields():
     pass
 
 
-def updatePlot(im):
+def updatePlot(im, time):
     #print "updatePlot"
     # Update matplotlib's window
 
     im.set_data(vel_x)
+    plt.title("time:"+str(time))
     plt.draw()
 
     pass
@@ -155,7 +156,7 @@ if __name__ == '__main__':
         print "time:", round(time, 3)
         #updateFields() 
         testUpdateFields() ### debug  ###
-        updatePlot(im)
+        updatePlot(im, time)
         
     print "end Program!"
  
