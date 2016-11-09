@@ -68,6 +68,7 @@ def initPlot():
     plt.xlabel("x")
     plt.ylabel("y")
     plt.title("vel_x:" + "")
+    plt.gca().invert_yaxis()
 
     plt.draw()
     plt.pause(0.01)
