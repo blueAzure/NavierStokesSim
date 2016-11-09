@@ -64,7 +64,6 @@ def initPlot():
     plt.pause(0.01)
     
     return im
-    pass
 
 
 def initFields():
