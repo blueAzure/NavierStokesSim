@@ -43,8 +43,8 @@ def setTestData():
     for x in range(NX):
         for y in range(NY):
             vel_x[x,y] = math.cos(0.1*x) + math.cos(0.1*y) + np.random.rand()*3
+            vel_y[x,y] = np.random.rand()*10
     vel_x[5,10] = 10
-
 
 
 def initPlot():
@@ -69,7 +69,9 @@ def initPlot():
     #        plt.close(event.canvas.figure)
     #cid = plt.gcf().canvas.mpl_connect('key_press_event', quit_figure)
 
-    plt.show()
+    plt.draw()
+    plt.pause(0.01)
+
     pass
 
 
@@ -144,7 +146,7 @@ if __name__ == '__main__':
     initPlot() # Initialize Plot
 
     for time in np.linspace(0, NT, NT/DT):
-        #print "time:", round(time, 3)
+        print "time:", round(time, 3)
         updateFields() 
         updatePlot()
         
