@@ -39,11 +39,20 @@ pres = np.zeros([NX, NY]) # Pressure array
 
 
 
-def setTestData():
+def testUpdateFields():
+    for x in range(NX):
+        for y in range(NY):
+            if x==0 or y==0 or x==NX-1 or y==NY-1:
+                continue
+            vel_x[x,y] = 0.25*(vel_x[x-1][y] + vel_x[x+1][y] + vel_x[x][y-1] + vel_x[x][y+1])
+
+
+def testInitFields():
     for x in range(NX):
         for y in range(NY):
             vel_x[x,y] = math.cos(0.1*x) + math.cos(0.1*y) + np.random.rand()*3
     vel_x[5,10] = 10
+
 
 
 def initPlot():
@@ -77,8 +86,7 @@ def updatePlot(im):
     #print "updatePlot"
     # Update matplotlib's window
 
-    im.set_data(vel_y)
-    plt.title("vel_y:" + "")
+    im.set_data(vel_x)
     plt.draw()
 
     pass
@@ -139,13 +147,14 @@ if __name__ == '__main__':
     print "start Program!"
     
     #initFields() # Initialize Fields
-    setTestData()
+    testInitFields() ### debug  ###
 
     im = initPlot() # Initialize Plot
 
     for time in np.linspace(0, NT, NT/DT):
         print "time:", round(time, 3)
-        updateFields() 
+        #updateFields() 
+        testUpdateFields() ### debug  ###
         updatePlot(im)
         
     print "end Program!"
