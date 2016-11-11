@@ -122,6 +122,14 @@ def calcCorrectionPhi():
 
 def calcPredictionalVel():
     #print "calcPredictionalVel"
+    for x in range(NX):
+        for y in range(NY):
+            AdvectiveTerm_x = 0
+            AdvectiveTerm_y = 0
+            DiffusionTerm = 0
+            preVel_x[x][y] = preVel_x[x][y]
+            preVel_y[x][y] = 0
+
     pass
 
 
