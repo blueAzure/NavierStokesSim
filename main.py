@@ -158,6 +158,7 @@ if __name__ == '__main__':
         #updateFields() 
         testUpdateFields() ### debug  ###
         updatePlot(im, time)
+    #plt.savefig('OUTPUT/'+"lastUpdate")
         
     print "end Program!"
  
