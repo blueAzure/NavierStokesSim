@@ -160,13 +160,14 @@ if __name__ == '__main__':
     testInitFields() ### debug  ###
 
     im = initPlot() # Initialize Plot
-
-    for time in np.linspace(0, NT, NT/DT):
-        print "time:", round(time, 3)
+    
+    for time in np.linspace(0, NT, NT/DT, endpoint=False):
+        print "time:", time
         #updateFields() 
         testUpdateFields() ### debug  ###
         updatePlot(im, time)
-    #plt.savefig('OUTPUT/'+"lastUpdate")
+        if time == 0 or time == NT-DT: # output in first & last steps.
+            plt.savefig('OUTPUT/'+"out_"+str(time)+".png")
         
     print "end Program!"
  
