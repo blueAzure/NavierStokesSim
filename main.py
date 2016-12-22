@@ -100,7 +100,7 @@ def solvePoissonEquation():
     #print "solvePoisoonEquation"
     # Init velocity temp Array for update
     # Init pressure temp Array for update
-    NTER = 1000 # max number of Loop count. about xLength*yLength???
+    NTER = NX*NY # max number of Loop count. about xLength*yLength???
 
     for count in range(NTER):
         pass
